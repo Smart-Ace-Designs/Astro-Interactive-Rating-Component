@@ -36,13 +36,14 @@ import RatingsButton from "@/components/RatingsButton.astro";
 <script>
   document.addEventListener("astro:page-load", () => {
     const buttons = Array.from(document.querySelectorAll(".ratings-button")) as HTMLElement[];
+
     buttons.forEach((button, index) => {
       button.addEventListener("click", () => {
         handleClick(index);
       });
     });
+
     const handleClick = (clickedIndex: number): void => {
-      const buttons = Array.from(document.querySelectorAll(".ratings-button")) as HTMLElement[];
       buttons.forEach((button, index) => {
         if (index === clickedIndex) {
           button.classList.remove(
