@@ -17,7 +17,7 @@ import ThankYouCard from "@/components/ThankYouCard.astro";
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    document.addEventListener("rating-submitted", (event) => {
+    document.addEventListener("rating-submitted", () => {
       const ratingsCard = document.getElementById("ratings-card");
       const thankYouCard = document.getElementById("thank-you-card");
 
