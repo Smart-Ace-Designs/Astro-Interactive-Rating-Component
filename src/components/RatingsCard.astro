@@ -41,7 +41,6 @@ import RatingsButton from "@/components/RatingsButton.astro";
 
     const handleRatingsButtonClick = (clickedIndex: number): void => {
       rating = clickedIndex + 1;
-      console.log(rating);
 
       buttons.forEach((button, index) => {
         if (index === clickedIndex) {
@@ -75,7 +74,7 @@ import RatingsButton from "@/components/RatingsButton.astro";
       if (rating) {
         const event = new CustomEvent("rating-submitted");
         document.dispatchEvent(event);
-      } else console.log("Missing!");
+      }
     });
   });
 </script>
