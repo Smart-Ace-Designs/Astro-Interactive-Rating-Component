@@ -22,9 +22,6 @@ import ThankYouCard from "@/components/ThankYouCard.astro";
       const thankYouCard = document.getElementById("thank-you-card");
 
       if (ratingsCard && thankYouCard) {
-        //TODO: Pass rating to ThankYouCard.astro component
-        //const rating: number = (event as CustomEvent).detail.rating;
-
         ratingsCard.classList.add("hidden");
         thankYouCard.classList.remove("hidden");
       }
