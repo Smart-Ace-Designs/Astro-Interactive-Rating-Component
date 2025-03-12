@@ -1,0 +1,24 @@
+---
+interface Props {
+  classes?: string;
+}
+
+const { classes } = Astro.props;
+---
+
+<div
+  class:list={[
+    "text-theme-white from-theme-dark-blue to-theme-dark-blue/50 flex max-w-84 flex-col items-center rounded-2xl bg-gradient-to-b p-8",
+    classes,
+  ]}
+>
+  <img src="/illustration-thank-you.svg" alt="Thank you" class="mb-8" />
+  <p class="bg-theme-light-gray/10 text-theme-orange mb-8 rounded-full px-4 py-2">
+    You selected 4 out of 5
+  </p>
+  <h1 class="mb-3 text-2xl font-bold text-white md:text-[1.64rem]">Thank you!</h1>
+  <p class="text-theme-light-gray mb-6 text-center text-sm leading-5.5 md:leading-6">
+    We appreciate you taking the time to give a rating. If you ever need more support, don't
+    hesitate to get in touch!
+  </p>
+</div>

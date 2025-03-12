@@ -1,74 +1,12 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import RatingsButton from "@/components/RatingsButton.astro";
+import RatingsCard from "@/components/RatingsCard.astro";
+import ThankYouCard from "@/components/ThankYouCard.astro";
 ---
 
 <MainLayout title="Frontend Mentor | Interactive Rating Component">
   <main class="flex h-screen items-center justify-center px-6">
-    <div
-      class="text-theme-white from-theme-dark-blue to-theme-dark-blue/50 max-w-84 rounded-2xl bg-gradient-to-b p-6 md:max-w-101 md:p-8"
-    >
-      <img
-        src="/icon-star.svg"
-        alt="Orange Star"
-        class="bg-theme-light-gray/10 mb-5 w-9.5 rounded-full p-3 md:mb-9 md:w-12 md:p-4"
-      />
-      <h1 class="mb-3 text-2xl font-bold text-white md:text-[1.64rem]">How did we do?</h1>
-      <p class="text-theme-light-gray mb-6 text-sm leading-5.5 md:leading-6">
-        Please let us know how we did with your support request. All feedback is appreciated to help
-        us improve our offering!
-      </p>
-      <div class="mb-6 flex justify-between">
-        {
-          Array.from({ length: 5 }).map((_, index) => (
-            <RatingsButton classes="ratings-button">{index + 1}</RatingsButton>
-          ))
-        }
-      </div>
-      <button
-        class="bg-theme-orange text-theme-very-dark-blue hover:bg-theme-white mb-2 w-full rounded-full py-3 text-sm font-bold tracking-widest uppercase"
-        >Submit</button
-      >
-    </div>
+    <RatingsCard classes="" />
+    <ThankYouCard classes="hidden" />
   </main>
 </MainLayout>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const buttons = Array.from(document.querySelectorAll(".ratings-button")) as HTMLElement[];
-
-    buttons.forEach((button, index) => {
-      button.addEventListener("click", () => {
-        handleClick(index);
-      });
-    });
-
-    const handleClick = (clickedIndex: number): void => {
-      buttons.forEach((button, index) => {
-        if (index === clickedIndex) {
-          button.classList.remove(
-            "bg-theme-light-gray/10",
-            "text-theme-light-gray",
-            "hover:bg-theme-white",
-          );
-          button.classList.add(
-            "bg-theme-orange",
-            "text-theme-very-dark-blue",
-            "hover:bg-theme-orange",
-          );
-        } else {
-          button.classList.remove(
-            "bg-theme-orange",
-            "text-theme-very-dark-blue",
-            "hover:bg-theme-orange",
-          );
-          button.classList.add(
-            "bg-theme-light-gray/10",
-            "text-theme-light-gray",
-            "hover:bg-theme-white",
-          );
-        }
-      });
-    };
-  });
-</script>
