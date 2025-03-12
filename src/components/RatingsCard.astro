@@ -1,18 +1,9 @@
 ---
 import RatingsButton from "@/components/RatingsButton.astro";
-
-interface Props {
-  classes?: string;
-}
-
-const { classes } = Astro.props;
 ---
 
 <div
-  class:list={[
-    "from-theme-dark-blue to-theme-dark-blue/50 max-w-84 rounded-2xl bg-gradient-to-b p-6 md:max-w-101 md:p-8",
-    classes,
-  ]}
+  class="from-theme-dark-blue to-theme-dark-blue/50 max-w-84 rounded-2xl bg-gradient-to-b p-6 md:max-w-101 md:p-8"
 >
   <img
     src="/icon-star.svg"
