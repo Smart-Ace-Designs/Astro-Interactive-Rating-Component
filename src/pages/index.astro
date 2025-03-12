@@ -17,11 +17,14 @@ import ThankYouCard from "@/components/ThankYouCard.astro";
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    document.addEventListener("rating-submitted", () => {
+    document.addEventListener("rating-submitted", (event) => {
       const ratingsCard = document.getElementById("ratings-card");
       const thankYouCard = document.getElementById("thank-you-card");
 
       if (ratingsCard && thankYouCard) {
+        //TODO: Pass rating to ThankYouCard.astro component
+        //const rating: number = (event as CustomEvent).detail.rating;
+
         ratingsCard.classList.add("hidden");
         thankYouCard.classList.remove("hidden");
       }

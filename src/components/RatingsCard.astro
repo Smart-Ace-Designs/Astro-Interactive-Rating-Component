@@ -72,7 +72,9 @@ import RatingsButton from "@/components/RatingsButton.astro";
     const submitButton = document.getElementById("submit-button") as HTMLButtonElement;
     submitButton.addEventListener("click", () => {
       if (rating) {
-        const event = new CustomEvent("rating-submitted");
+        const event = new CustomEvent("rating-submitted", {
+          detail: { rating: rating },
+        });
         document.dispatchEvent(event);
       }
     });
