@@ -24,21 +24,25 @@ import RatingsButton from "@/components/RatingsButton.astro";
   </div>
   <button
     class="bg-theme-orange text-theme-very-dark-blue hover:bg-theme-white mb-2 w-full rounded-full py-3 text-sm font-bold tracking-widest uppercase"
-    >Submit</button
+    id="submit-button">Submit</button
   >
 </div>
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const buttons = Array.from(document.querySelectorAll(".ratings-button")) as HTMLElement[];
+    let rating: Number;
 
+    const buttons = Array.from(document.querySelectorAll(".ratings-button")) as HTMLElement[];
     buttons.forEach((button, index) => {
       button.addEventListener("click", () => {
-        handleClick(index);
+        handleRatingsButtonClick(index);
       });
     });
 
-    const handleClick = (clickedIndex: number): void => {
+    const handleRatingsButtonClick = (clickedIndex: number): void => {
+      rating = clickedIndex + 1;
+      console.log(rating);
+
       buttons.forEach((button, index) => {
         if (index === clickedIndex) {
           button.classList.remove(
@@ -65,5 +69,13 @@ import RatingsButton from "@/components/RatingsButton.astro";
         }
       });
     };
+
+    const submitButton = document.getElementById("submit-button") as HTMLButtonElement;
+    submitButton.addEventListener("click", () => {
+      if (rating) {
+        const event = new CustomEvent("rating-submitted");
+        document.dispatchEvent(event);
+      } else console.log("Missing!");
+    });
   });
 </script>
