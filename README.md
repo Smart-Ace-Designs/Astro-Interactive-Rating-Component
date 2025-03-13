@@ -41,6 +41,7 @@ Users should be able to:
 - Tailwind CSS v4
 - Flexbox
 - Bun
+- Mobile-first workflow
 
 ## Author
 
