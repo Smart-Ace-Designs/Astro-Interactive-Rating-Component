@@ -23,7 +23,8 @@ import RatingsButton from "@/components/RatingsButton.astro";
     }
   </div>
   <button
-    class="bg-theme-orange text-theme-very-dark-blue hover:bg-theme-white mb-2 w-full rounded-full py-3 text-sm font-bold tracking-widest uppercase hover:cursor-pointer"
+    disabled
+    class="bg-theme-orange text-theme-very-dark-blue hover:bg-theme-white mb-2 w-full rounded-full py-3 text-sm font-bold tracking-widest uppercase hover:cursor-not-allowed"
     id="submit-button">Submit</button
   >
 </div>
@@ -31,6 +32,16 @@ import RatingsButton from "@/components/RatingsButton.astro";
 <script>
   document.addEventListener("astro:page-load", () => {
     let rating: Number;
+
+    const submitButton = document.getElementById("submit-button") as HTMLButtonElement;
+    submitButton.addEventListener("click", () => {
+      if (rating) {
+        const event = new CustomEvent("rating-submitted", {
+          detail: { rating: rating },
+        });
+        document.dispatchEvent(event);
+      }
+    });
 
     const buttons = Array.from(document.querySelectorAll(".ratings-button")) as HTMLElement[];
     buttons.forEach((button, index) => {
@@ -41,6 +52,9 @@ import RatingsButton from "@/components/RatingsButton.astro";
 
     const handleRatingsButtonClick = (clickedIndex: number): void => {
       rating = clickedIndex + 1;
+      submitButton.removeAttribute("disabled");
+      submitButton.classList.remove("hover:cursor-not-allowed");
+      submitButton.classList.add("hover:cursor-pointer");
 
       buttons.forEach((button, index) => {
         if (index === clickedIndex) {
@@ -68,15 +82,5 @@ import RatingsButton from "@/components/RatingsButton.astro";
         }
       });
     };
-
-    const submitButton = document.getElementById("submit-button") as HTMLButtonElement;
-    submitButton.addEventListener("click", () => {
-      if (rating) {
-        const event = new CustomEvent("rating-submitted", {
-          detail: { rating: rating },
-        });
-        document.dispatchEvent(event);
-      }
-    });
   });
 </script>
