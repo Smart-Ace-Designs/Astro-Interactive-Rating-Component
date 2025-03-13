@@ -15,7 +15,7 @@ import RatingsButton from "@/components/RatingsButton.astro";
     Please let us know how we did with your support request. All feedback is appreciated to help us
     improve our offering!
   </p>
-  <div class="mb-6 flex justify-between">
+  <div class="mb-6 flex justify-between md:mb-8">
     {
       Array.from({ length: 5 }).map((_, index) => (
         <RatingsButton classes="ratings-button">{index + 1}</RatingsButton>
@@ -24,7 +24,7 @@ import RatingsButton from "@/components/RatingsButton.astro";
   </div>
   <button
     disabled
-    class="bg-theme-orange text-theme-very-dark-blue hover:bg-theme-white mb-2 w-full rounded-full py-3 text-sm font-bold tracking-widest uppercase hover:cursor-not-allowed"
+    class="bg-theme-orange text-theme-very-dark-blue hover:bg-theme-white mb-2 w-full rounded-full py-3 text-sm font-bold tracking-widest uppercase hover:cursor-not-allowed md:mb-0"
     id="submit-button">Submit</button
   >
 </div>
