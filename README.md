@@ -25,12 +25,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot 2025-03-13 142204](https://github.com/user-attachments/assets/1b0f894d-4ded-4f06-a854-73a0af7a2990)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/Smart-Ace-Designs/Astro-Interactive-Rating-Component)
+- Live Site URL: [Netlify](https://smartacedesigns-astro-irc.netlify.app)
 
 ## My process
 
