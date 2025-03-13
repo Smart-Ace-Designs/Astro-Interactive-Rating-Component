@@ -9,7 +9,7 @@ import ThankYouCard from "@/components/ThankYouCard.astro";
     <div id="ratings-card">
       <RatingsCard />
     </div>
-    <div class="hidden" id="thank-you-card">
+    <div aria-hidden="true" class="hidden" id="thank-you-card">
       <ThankYouCard />
     </div>
   </main>
@@ -23,7 +23,9 @@ import ThankYouCard from "@/components/ThankYouCard.astro";
 
       if (ratingsCard && thankYouCard) {
         ratingsCard.classList.add("hidden");
+        ratingsCard.setAttribute("aria-inert", "true");
         thankYouCard.classList.remove("hidden");
+        thankYouCard.setAttribute("aria-hidden", "false");
       }
     });
   });

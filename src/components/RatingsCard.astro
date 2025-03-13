@@ -18,15 +18,20 @@ import RatingsButton from "@/components/RatingsButton.astro";
   <div class="mb-6 flex justify-between md:mb-8">
     {
       Array.from({ length: 5 }).map((_, index) => (
-        <RatingsButton classes="ratings-button">{index + 1}</RatingsButton>
+        <RatingsButton classes="ratings-button" id={(index + 1).toString()}>
+          {index + 1}
+        </RatingsButton>
       ))
     }
   </div>
   <button
+    aria-disabled="true"
+    aria-describedby="submit-desc"
     disabled
     class="bg-theme-orange text-theme-very-dark-blue hover:bg-theme-white mb-2 w-full rounded-full py-3 text-sm font-bold tracking-widest uppercase hover:cursor-not-allowed md:mb-0"
     id="submit-button">Submit</button
   >
+  <div id="submit-desc" hidden>The Submit button is disabled until you select a rating.</div>
 </div>
 
 <script>
@@ -55,6 +60,7 @@ import RatingsButton from "@/components/RatingsButton.astro";
       submitButton.removeAttribute("disabled");
       submitButton.classList.remove("hover:cursor-not-allowed");
       submitButton.classList.add("hover:cursor-pointer");
+      submitButton.setAttribute("aria-disabled", "false");
 
       buttons.forEach((button, index) => {
         if (index === clickedIndex) {
