@@ -25,10 +25,9 @@ import RatingsButton from "@/components/RatingsButton.astro";
     }
   </div>
   <button
-    aria-disabled="true"
     aria-describedby="submit-desc"
     disabled
-    class="bg-theme-orange text-theme-very-dark-blue hover:bg-theme-white mb-2 w-full rounded-full py-3 text-sm font-bold tracking-widest uppercase hover:cursor-not-allowed md:mb-0"
+    class="bg-theme-orange text-theme-very-dark-blue hover:bg-theme-white mb-2 w-full rounded-full py-3 text-sm font-bold tracking-widest uppercase transition-colors duration-500 hover:cursor-not-allowed md:mb-0"
     id="submit-button">Submit</button
   >
   <div id="submit-desc" hidden>The Submit button is disabled until you select a rating.</div>
