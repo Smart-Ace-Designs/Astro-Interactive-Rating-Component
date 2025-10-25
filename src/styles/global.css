@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
-
 @theme {
   --color-theme-orange: hsl(25, 97%, 53%);
   --color-theme-white: hsl(0, 0%, 100%);
@@ -18,12 +8,4 @@
   --color-theme-very-dark-blue: hsl(216, 12%, 8%);
 
   --font-overpass: "Overpass", "sans-serif";
-}
-
-@font-face {
-  font-family: "Overpass";
-  font-style: normal;
-  font-weight: 400 700;
-  src: url("/fonts/Overpass-VariableFont_wght.ttf") format("truetype");
-  font-display: swap;
 }
