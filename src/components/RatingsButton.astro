@@ -11,7 +11,7 @@ const { classes, ...rest } = Astro.props;
 <button
   aria-label={`Rating ${rest.id}`}
   class:list={[
-    "bg-theme-light-gray/10 text-theme-light-gray hover:text-theme-very-dark-blue hover:bg-theme-white h-10 w-10 rounded-full text-sm font-bold transition-colors duration-500 hover:cursor-pointer md:h-13 md:w-13",
+    "h-10 w-10 rounded-full bg-theme-light-gray/10 text-sm font-bold text-theme-light-gray transition-colors duration-500 hover:cursor-pointer hover:bg-theme-white hover:text-theme-very-dark-blue md:h-13 md:w-13",
     classes,
   ]}
   {...rest}
