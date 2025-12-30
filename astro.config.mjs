@@ -17,7 +17,6 @@ export default defineConfig({
         cssVariable: "--font-overpass",
         weights: [400, 700],
         styles: ["normal"],
-        subsets: ["latin"],
       },
     ],
   },
